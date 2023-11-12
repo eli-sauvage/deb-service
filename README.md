@@ -1,7 +1,17 @@
-`cargo build --release`
+simple apt package that installs and start a service
 
-`cp target/release/service-apt-test service-apt-test_1.0-1/usr/local/bin/service-apt-test`
+the service creates and updates the file at $HOME/Time every 20ms, 
+setting the value in the file to sec.ms since the program has been started
 
-`dpkg-deb --build service-apt-test_1.0-1`
+this project is meant as an example for how to create an apt package that installs a new systemd service
 
-`sudo apt install ./service-apt-test_1.0-1.deb`
+# Install
+`make install`
+_requires root_
+
+# Remove
+`make remove`
+_requires root_
+
+# Build
+`make build`
