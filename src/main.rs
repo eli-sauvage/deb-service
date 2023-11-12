@@ -1,5 +1,5 @@
 use std::{
-    fs::OpenOptions,
+    fs::{create_dir_all, OpenOptions},
     io::Write,
     time::{Duration, Instant},
 };
@@ -7,7 +7,10 @@ use std::{
 #[tokio::main]
 async fn main() {
     println!("start");
-    let file = "/home/elico/Time";
+    let path = std::path::Path::new("/home/elico/Time");
+    let prefix = path.parent().unwrap();
+    create_dir_all(prefix).unwrap();
+
     let mut timer = tokio::time::interval(Duration::from_millis(20));
     let t0 = Instant::now();
 
@@ -21,7 +24,7 @@ async fn main() {
             .write(true)
             .truncate(true)
             .create(true)
-            .open(file)
+            .open(path)
             .unwrap();
         f.write_all(t.to_string().as_bytes()).unwrap();
         timer.tick().await;
