@@ -1,4 +1,5 @@
 use std::{
+    env,
     fs::{create_dir_all, OpenOptions},
     io::Write,
     time::{Duration, Instant},
@@ -7,7 +8,8 @@ use std::{
 #[tokio::main]
 async fn main() {
     println!("start");
-    let path = std::path::Path::new("/home/elico/Time");
+    let path = &std::path::Path::new(&env::var("HOME").unwrap()).join("Time");
+    println!("file is at {:?}", path);
     let prefix = path.parent().unwrap();
     create_dir_all(prefix).unwrap();
 
