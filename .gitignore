@@ -1,2 +1,3 @@
 /target
 *.deb
+/service-apt-test_1.0-1/usr/local/bin/*
