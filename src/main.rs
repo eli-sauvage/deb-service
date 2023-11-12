@@ -1,5 +1,4 @@
 use std::{
-    env,
     fs::{create_dir_all, OpenOptions},
     io::Write,
     time::{Duration, Instant},
