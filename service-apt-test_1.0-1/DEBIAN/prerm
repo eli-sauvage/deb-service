@@ -1,0 +1,12 @@
+#!/bin/bash
+set -e
+
+case "$1" in
+remove)
+	# Démarrer le service après l'installation
+	systemctl stop service-apt-test
+	;;
+esac
+
+# Sortie sans erreurs
+exit 0
