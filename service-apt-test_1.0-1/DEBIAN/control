@@ -1,0 +1,11 @@
+Package: service-apt-test
+Version: 1.0-1
+Section: base
+Priority: optional
+Architecture: amd64
+Build-Depends: dh-systemd(>=1.5)
+Maintainer: Your Name <you@email.com>
+Description: Hello World
+ When you need some sunshine, just run this
+ small program!
+

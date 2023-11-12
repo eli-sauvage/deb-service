@@ -1,0 +1,11 @@
+[Unit]
+Description=desc
+After=network-online.target
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/service-apt-test
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

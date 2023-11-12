@@ -1,0 +1,12 @@
+#!/bin/bash
+set -e
+
+case "$1" in
+configure)
+	# Démarrer le service après l'installation
+	systemctl start service-apt-test_1.0-1
+	;;
+esac
+
+# Sortie sans erreurs
+exit 0
