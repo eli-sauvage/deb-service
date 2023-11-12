@@ -8,7 +8,7 @@ use std::{
 #[tokio::main]
 async fn main() {
     println!("start");
-    let path = &std::path::Path::new(&env::var("HOME").unwrap()).join("Time");
+    let path = &std::path::Path::new("/tmp/Time");
     println!("file is at {:?}", path);
     let prefix = path.parent().unwrap();
     create_dir_all(prefix).unwrap();
