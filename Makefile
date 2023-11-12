@@ -3,6 +3,7 @@ all:
 
 build:
 	cargo build --release
+	mkdir -p service-apt-test_1.0-1/etc/systemd/system/
 	cp target/release/service-apt-test service-apt-test_1.0-1/usr/local/bin/service-apt-test
 	dpkg-deb --build service-apt-test_1.0-1
 
